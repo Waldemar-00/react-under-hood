@@ -2,12 +2,12 @@ import './App.css'
 import Button from './components/UI/Button'
 import Paragraph from './components/Out/Paragraph'
 import Article from './components/Out/Article'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 function App() {
   const [isShow, setIsShow] = useState(false)
-  function toggleParagraph() {
+  const toggleParagraph = useCallback(() => {
     setIsShow(isShow => !isShow)
-  }
+  }, [])
   return (
     <div className="App">
       <h1>React under the hood</h1>
